@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Menu {
 
@@ -63,7 +64,7 @@ public class Menu {
             System.out.println(new Animal(
                     getDataFromUser("Give name of an animal"),
                     getDataFromUser("Give species of an animal"),
-                    LocalDate.now(),
+                    getDateFromString(getDataFromUser("Give birth date of an animal [DD-MM-YYYY]")),
                     2f)
             );
         } catch (IOException e) {
@@ -72,6 +73,11 @@ public class Menu {
 
         // create a class of new animal
         // add new animal to extention animal
+    }
+
+    private LocalDate getDateFromString(String dataFromUser) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-y");
+        return LocalDate.parse(dataFromUser, formatter);
     }
 
     private String getDataFromUser(String message) throws IOException {
