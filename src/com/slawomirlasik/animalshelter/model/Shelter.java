@@ -13,6 +13,10 @@ public class Shelter extends ExtensionClass {
         Animal.getExtension(Animal.class).add(animal);
     }
 
+    public static void printAllAnimalsCurrentlyInTheShelter(){
+        getExtension(Animal.class).stream().forEach(System.out::println);
+    }
+
 
     public String getNameOfTheShelter() {
         return nameOfTheShelter;
