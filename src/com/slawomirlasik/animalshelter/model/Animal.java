@@ -2,7 +2,7 @@ package com.slawomirlasik.animalshelter.model;
 
 import java.time.LocalDate;
 
-public class Cat {
+public class Animal {
 
     private String name;
     private String species;
@@ -12,11 +12,11 @@ public class Cat {
     private LocalDate birthDate;
     private LocalDate admissionDate;
 
-    public Cat(String name, String species, LocalDate birthDate, Float weight) {
+    public Animal(String name, String species, LocalDate birthDate, Float weight) {
       this(name, species, birthDate, weight, LocalDate.now());
     }
 
-    public Cat(String name, String species, LocalDate birthDate, Float weight, LocalDate admissionDate) {
+    public Animal(String name, String species, LocalDate birthDate, Float weight, LocalDate admissionDate) {
         this.name = name;
         this.species = species;
         this.birthDate = birthDate;
