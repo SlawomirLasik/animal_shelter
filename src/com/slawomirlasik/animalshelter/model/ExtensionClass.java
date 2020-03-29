@@ -25,5 +25,10 @@ public class ExtensionClass {
         extention.add(this);
     }
 
+    // add method of getting extension (animal extension)
+    public static HashSet getExtension(Class extentionClassKey){
+        return extensionMap.get(extentionClassKey);
+    }
+
 
 }
