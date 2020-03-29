@@ -1,12 +1,29 @@
 package com.slawomirlasik.animalshelter.model;
 
-import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class ExtensionClass {
 
-    private Map<Class, HashSet<Class>> extensionMap = new HashMap<>();
+    private static Map<Class, HashSet<Class>> extensionMap = new Hashtable<>();
+
+
+    public ExtensionClass() {
+        Class extensionClassKey = this.getClass();
+        HashSet extention = null;
+
+        if(extensionMap.containsKey(extensionClassKey)){
+            // we have extension with this key and we retrieve it
+            extention = extensionMap.get(extensionClassKey);
+        }else{
+            // we do not have this extension key and we have to create it
+            extention = new HashSet<>();
+            extensionMap.put(extensionClassKey, extention);
+        }
+        // we add current class to the extension
+        extention.add(this);
+    }
 
 
 }
