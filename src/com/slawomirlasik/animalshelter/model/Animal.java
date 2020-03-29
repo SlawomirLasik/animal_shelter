@@ -2,7 +2,7 @@ package com.slawomirlasik.animalshelter.model;
 
 import java.time.LocalDate;
 
-public class Animal {
+public class Animal extends ExtensionClass {
 
     private String name;
     private String species;
@@ -17,6 +17,7 @@ public class Animal {
     }
 
     public Animal(String name, String species, LocalDate birthDate, Float weight, LocalDate admissionDate) {
+        super();
         this.name = name;
         this.species = species;
         this.birthDate = birthDate;
