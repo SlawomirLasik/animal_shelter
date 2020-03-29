@@ -65,7 +65,7 @@ public class Menu {
                     getDataFromUser("Give name of an animal"),
                     getDataFromUser("Give species of an animal"),
                     getDateFromString(getDataFromUser("Give birth date of an animal [DD-MM-YYYY]")),
-                    2f)
+                    Float.parseFloat(getDataFromUser("Give animal weight (in kilograms)")))
             );
         } catch (IOException e) {
             e.printStackTrace();
