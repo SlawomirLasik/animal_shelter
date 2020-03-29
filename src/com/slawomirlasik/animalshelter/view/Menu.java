@@ -5,6 +5,7 @@ import com.slawomirlasik.animalshelter.model.Animal;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 
 public class Menu {
 
@@ -32,6 +33,7 @@ public class Menu {
                 switch (inputString) {
                     case "1": {
                         System.out.println("CREATING NEW ANIMAL");
+                        addNewAnimalToShelter();
                     }
                     break;
                     default:
@@ -46,5 +48,34 @@ public class Menu {
         }
 
 
+    }
+
+    private void addNewAnimalToShelter() {
+//        private String name;
+//        private String species;
+//
+//        private Float weight;
+//
+//        private LocalDate birthDate;
+//        private LocalDate admissionDate;
+        // get all data from user for a new animal (String name, String species, LocalDate birthDate, Float weight)
+        try {
+            System.out.println(new Animal(
+                    getDataFromUser("Give name of an animal"),
+                    "",
+                    LocalDate.now(),
+                    2f)
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // create a class of new animal
+        // add new animal to extention animal
+    }
+
+    private String getDataFromUser(String message) throws IOException {
+        System.out.printf("%s%n", message);
+        return console.readLine();
     }
 }

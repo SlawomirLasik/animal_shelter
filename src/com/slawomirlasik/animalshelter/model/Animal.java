@@ -57,4 +57,15 @@ public class Animal extends ExtensionClass {
     public Integer getAge(){
         return LocalDate.now().getYear() - this.birthDate.getYear();
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", species='" + species + '\'' +
+                ", weight=" + weight +
+                ", birthDate=" + birthDate +
+                ", admissionDate=" + admissionDate +
+                '}';
+    }
 }
