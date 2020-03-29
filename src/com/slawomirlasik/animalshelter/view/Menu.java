@@ -1,6 +1,7 @@
 package com.slawomirlasik.animalshelter.view;
 
 import com.slawomirlasik.animalshelter.model.Animal;
+import com.slawomirlasik.animalshelter.model.Shelter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class Menu {
 //        private LocalDate admissionDate;
         // get all data from user for a new animal (String name, String species, LocalDate birthDate, Float weight)
         try {
-            System.out.println(new Animal(
+            Shelter.addNewAnimalToTheShelter(new Animal(
                     getDataFromUser("Give name of an animal"),
                     getDataFromUser("Give species of an animal"),
                     getDateFromString(getDataFromUser("Give birth date of an animal [DD-MM-YYYY]")),

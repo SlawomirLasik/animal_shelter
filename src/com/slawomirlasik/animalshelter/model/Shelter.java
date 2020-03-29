@@ -9,6 +9,10 @@ public class Shelter extends ExtensionClass {
         this.nameOfTheShelter = nameOfTheShelter;
     }
 
+    public static void addNewAnimalToTheShelter(Animal animal) {
+        Animal.getExtension(Animal.class).add(animal);
+    }
+
 
     public String getNameOfTheShelter() {
         return nameOfTheShelter;
