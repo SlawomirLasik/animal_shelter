@@ -62,7 +62,7 @@ public class Menu {
         try {
             System.out.println(new Animal(
                     getDataFromUser("Give name of an animal"),
-                    "",
+                    getDataFromUser("Give species of an animal"),
                     LocalDate.now(),
                     2f)
             );
