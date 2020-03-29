@@ -15,6 +15,8 @@ public class Menu {
 
     private final String STARTING_MESSAGE_INFO = "Welcome to AnimalShelter management system. \nWhat do you want to do?";
     private final String ADDING_NEW_ANIMAL_MESSAGE = "Add new animal";
+    private final String PRINTING_ALL_ANIMALS_IN_SHELTER_MESSAGE = "Print All Animals currently in the shelter";
+
 
     public Menu() {
     }
@@ -26,6 +28,7 @@ public class Menu {
             System.out.printf("%s%n", STARTING_MESSAGE_INFO);
             ;
             System.out.printf("1 - %s?%n", ADDING_NEW_ANIMAL_MESSAGE);
+            System.out.printf("2 - %s?%n", PRINTING_ALL_ANIMALS_IN_SHELTER_MESSAGE);
             String inputString;
             try {
                 System.out.print(">");
@@ -34,8 +37,10 @@ public class Menu {
 
                 switch (inputString) {
                     case "1": {
-                        System.out.println("CREATING NEW ANIMAL");
                         addNewAnimalToShelter();
+                    }
+                    case "2": {
+                        printingAllAnimalsInTheShelter();
                     }
                     break;
                     default:
@@ -50,6 +55,10 @@ public class Menu {
         }
 
 
+    }
+
+    private void printingAllAnimalsInTheShelter() {
+        Shelter.printAllAnimalsCurrentlyInTheShelter();
     }
 
     private void addNewAnimalToShelter() {
