@@ -70,7 +70,8 @@ public class Animal extends ExtensionClass {
     @Override
     public String toString() {
         return "Animal{" +
-                "name='" + name + '\'' +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
                 ", species='" + species + '\'' +
                 ", weight=" + weight +
                 ", birthDate=" + birthDate +
