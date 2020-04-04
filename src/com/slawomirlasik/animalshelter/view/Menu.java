@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Menu {
 
-    static BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+    public static BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
     private final String STARTING_MESSAGE_INFO = "Welcome to AnimalShelter management system. \nWhat do you want to do?";
     private final String ADDING_NEW_ANIMAL_MESSAGE = "Add new animal";
