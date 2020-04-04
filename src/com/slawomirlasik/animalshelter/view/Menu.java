@@ -41,14 +41,16 @@ public class Menu {
                 switch (inputString) {
                     case "1": {
                         addNewAnimalToShelter();
+                        break;
                     }
                     case "2": {
                         printingAllAnimalsInTheShelter();
+                        break;
                     }
                     case "3": {
                         Shelter.deleteSelectedAnimalFromShelter(Shelter.pickAnimalFromShelter());
+                        break;
                     }
-                    break;
                     default:
                         break;
                 }
