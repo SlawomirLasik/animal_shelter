@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 public class Animal extends ExtensionClass {
 
+    private static Long Current_ID = 0l;
+
+    private Long ID = Current_ID++;
+
     private String name;
     private String species;
 
@@ -13,7 +17,7 @@ public class Animal extends ExtensionClass {
     private LocalDate admissionDate;
 
     public Animal(String name, String species, LocalDate birthDate, Float weight) {
-      this(name, species, birthDate, weight, LocalDate.now());
+        this(name, species, birthDate, weight, LocalDate.now());
     }
 
     public Animal(String name, String species, LocalDate birthDate, Float weight, LocalDate admissionDate) {
@@ -54,14 +58,20 @@ public class Animal extends ExtensionClass {
         return birthDate;
     }
 
-    public Integer getAge(){
+    public Integer getAge() {
         return LocalDate.now().getYear() - this.birthDate.getYear();
     }
+
+    public Long getID() {
+        return ID;
+    }
+
 
     @Override
     public String toString() {
         return "Animal{" +
-                "name='" + name + '\'' +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
                 ", species='" + species + '\'' +
                 ", weight=" + weight +
                 ", birthDate=" + birthDate +
