@@ -18,21 +18,19 @@ public class Shelter extends ExtensionClass {
         Animal.getExtension(Animal.class).add(animal);
     }
 
-    public static void printAllAnimalsCurrentlyInTheShelter(){
+    public static void printAllAnimalsCurrentlyInTheShelter() {
         getExtension(Animal.class).stream().forEach(System.out::println);
     }
 
-    public static Object pickAnimalFromShelter() throws IOException {
+    public static Animal pickAnimalFromShelter() throws IOException {
         System.out.println("Pick Animal ID for deletion:");
         printAllAnimalsCurrentlyInTheShelter();
 
         System.out.print(">");
         String input = Menu.console.readLine();
 
-        Animal pickedAnimal = ((HashSet<Animal>)getExtension(Animal.class)).stream().
+        return ((HashSet<Animal>) getExtension(Animal.class)).stream().
                 filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
-        System.out.println(pickedAnimal);
-        return null;
     }
 
     public static void deleteSelectedAnimalFromShelter(Object pickAnimalFromShelter) {
