@@ -33,7 +33,8 @@ public class Shelter extends ExtensionClass {
                 filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
     }
 
-    public static void deleteSelectedAnimalFromShelter(Object pickAnimalFromShelter) {
+    public static void deleteSelectedAnimalFromShelter(Animal pickedAnimalFromShelter) throws IOException {
+        getExtension(Animal.class).remove(pickedAnimalFromShelter);
     }
 
 
