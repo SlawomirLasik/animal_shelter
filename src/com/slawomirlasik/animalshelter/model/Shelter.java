@@ -30,7 +30,7 @@ public class Shelter extends ExtensionClass {
         String input = Menu.console.readLine();
 
         Animal pickedAnimal = ((HashSet<Animal>)getExtension(Animal.class)).stream().
-                filter(animal -> animal.getID().equals(new Long(input))).findFirst();
+                filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
         System.out.println(pickedAnimal);
         return null;
     }
