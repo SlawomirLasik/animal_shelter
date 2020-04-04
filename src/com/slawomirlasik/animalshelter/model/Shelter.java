@@ -19,6 +19,14 @@ public class Shelter extends ExtensionClass {
         getExtension(Animal.class).stream().forEach(System.out::println);
     }
 
+    public static Object pickAnimalFromShelter() {
+
+        return null;
+    }
+
+    public static void deleteSelectedAnimalFromShelter(Object pickAnimalFromShelter) {
+    }
+
 
     public String getNameOfTheShelter() {
         return nameOfTheShelter;
