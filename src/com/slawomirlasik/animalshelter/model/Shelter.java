@@ -1,5 +1,7 @@
 package com.slawomirlasik.animalshelter.model;
 
+import java.util.HashSet;
+
 public class Shelter extends ExtensionClass {
 
     private String nameOfTheShelter;
