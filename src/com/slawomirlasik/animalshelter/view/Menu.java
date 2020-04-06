@@ -44,7 +44,7 @@ public class Menu {
                         break;
                     }
                     case "2": {
-                        printingAllAnimalsInTheShelter();
+                        printDetailedInformationAboutShelter();
                         break;
                     }
                     case "3": {
@@ -61,6 +61,15 @@ public class Menu {
                 continue;
             }
         }
+
+
+    }
+
+    private void printDetailedInformationAboutShelter() {
+        // TODO SL:set maximum capacity animals that shelter can adopt
+        // TODO SL:add info how many maximum space left for new animals
+        // TODO SL:add info how many spaces from the pool of maximum are taken
+        // TODO SL:add info how many species of each animal there are in shelter
 
 
     }
