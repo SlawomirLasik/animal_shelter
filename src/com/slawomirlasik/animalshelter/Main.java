@@ -1,5 +1,6 @@
 package com.slawomirlasik.animalshelter;
 
+import com.slawomirlasik.animalshelter.model.Shelter;
 import com.slawomirlasik.animalshelter.view.Menu;
 
 public class Main {
@@ -9,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Menu menu = new Menu();
+        Menu menu = new Menu(new Shelter("Animal Heaven", 10));
         menu.showMenu();
     }
 }

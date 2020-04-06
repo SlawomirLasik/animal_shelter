@@ -18,8 +18,11 @@ public class Menu {
     private final String PRINTING_ALL_ANIMALS_IN_SHELTER_MESSAGE = "Print All Animals currently in the shelter";
     private final String DELETE_AN_SELECTED_ANIMAL = "Delete animal from shelter";
 
+    private Shelter shelter;
 
-    public Menu() {
+
+    public Menu(Shelter shelter) {
+        this.shelter = shelter;
     }
 
     public void showMenu() {
@@ -48,7 +51,7 @@ public class Menu {
                         break;
                     }
                     case "3": {
-                        Shelter.deleteSelectedAnimalFromShelter(Shelter.pickAnimalFromShelter());
+                        shelter.deleteSelectedAnimalFromShelter(shelter.pickAnimalFromShelter());
                         break;
                     }
                     default:
@@ -75,7 +78,7 @@ public class Menu {
     }
 
     private void printingAllAnimalsInTheShelter() {
-        Shelter.printAllAnimalsCurrentlyInTheShelter();
+        shelter.printAllAnimalsCurrentlyInTheShelter();
     }
 
     private void addNewAnimalToShelter() {
@@ -88,7 +91,7 @@ public class Menu {
 //        private LocalDate admissionDate;
         // get all data from user for a new animal (String name, String species, LocalDate birthDate, Float weight)
         try {
-            Shelter.addNewAnimalToTheShelter(new Animal(
+            shelter.addNewAnimalToTheShelter(new Animal(
                     getDataFromUser("Give name of an animal"),
                     getDataFromUser("Give species of an animal"),
                     getDateFromString(getDataFromUser("Give birth date of an animal [DD-MM-YYYY]")),

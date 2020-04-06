@@ -17,15 +17,15 @@ public class Shelter extends ExtensionClass {
         this.nameOfTheShelter = nameOfTheShelter;
     }
 
-    public static void addNewAnimalToTheShelter(Animal animal) {
+    public void addNewAnimalToTheShelter(Animal animal) {
         Animal.getExtension(Animal.class).add(animal);
     }
 
-    public static void printAllAnimalsCurrentlyInTheShelter() {
+    public void printAllAnimalsCurrentlyInTheShelter() {
         getExtension(Animal.class).stream().forEach(System.out::println);
     }
 
-    public static Animal pickAnimalFromShelter() throws IOException {
+    public Animal pickAnimalFromShelter() throws IOException {
         System.out.println("Pick Animal ID for deletion:");
         printAllAnimalsCurrentlyInTheShelter();
 
@@ -37,7 +37,7 @@ public class Shelter extends ExtensionClass {
     }
 
 
-    public static void deleteSelectedAnimalFromShelter(Animal pickedAnimalFromShelter) throws IOException {
+    public void deleteSelectedAnimalFromShelter(Animal pickedAnimalFromShelter) throws IOException {
         getExtension(Animal.class).remove(pickedAnimalFromShelter);
     }
 
