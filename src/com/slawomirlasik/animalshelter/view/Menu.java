@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
 
 public class Menu {
 
@@ -68,11 +69,7 @@ public class Menu {
 
     }
 
-    private void printDetailedInformationAboutShelter() {
-        // TODO SL:set maximum capacity animals that shelter can adopt
-        // TODO SL:add info how many maximum space left for new animals
-        // TODO SL:add info how many spaces from the pool of maximum are taken
-        // TODO SL:add info how many species of each animal there are in shelter
+    private void printDetailedInformationAboutShelter() throws IOException {
         System.out.printf("Currently there are %d/$d animals in the shelter%n",
                 shelter.getNumberAnimalsInTheShelter(),
                 shelter.getMaximumCapacityOfAnimalsInShelter()
@@ -80,6 +77,30 @@ public class Menu {
         System.out.printf("Shelter can take %d new animals more%n",
                 shelter.getMaximumCapacityOfAnimalsInShelter() - shelter.getNumberAnimalsInTheShelter()
         );
+
+        final HashSet<Animal> animals = shelter.getExtension(Animal.class);
+
+        HashSet<String> animalDistinctSpeciesInShelter = new HashSet<>();
+        animals.stream().forEach(animal -> animalDistinctSpeciesInShelter.add(animal.getSpecies()));
+
+//        System.out.println(animalDistinctSpeciesInShelter);
+
+        for (String animalSpecies :
+                animalDistinctSpeciesInShelter) {
+            int counter = 0;
+            for (Animal animal :
+                    animals) {
+                if (animal.getSpecies().equals(animalSpecies)) {
+                    counter++;
+                }
+            }
+            System.out.printf("There are %d of %s species in the shelter%n", counter, animalSpecies);
+
+        }
+        System.out.println("Press enter key to continue...");
+        console.readLine();
+        System.out.println();
+
 
     }
 
