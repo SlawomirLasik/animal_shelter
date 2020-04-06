@@ -73,6 +73,7 @@ public class Menu {
         // TODO SL:add info how many maximum space left for new animals
         // TODO SL:add info how many spaces from the pool of maximum are taken
         // TODO SL:add info how many species of each animal there are in shelter
+        System.out.printf("Currently there are %d animals in the shelter", shelter.getNumberAnimalsInTheShelter());
 
 
     }
