@@ -7,10 +7,13 @@ import java.util.HashSet;
 
 public class Shelter extends ExtensionClass {
 
+    private Integer maximumCapacityOfAnimalsInShelter;
+
     private String nameOfTheShelter;
 
-    public Shelter(String nameOfTheShelter) {
+    public Shelter(String nameOfTheShelter, Integer maximumCapacityOfAnimalsInShelter) {
         super();
+        this.maximumCapacityOfAnimalsInShelter = maximumCapacityOfAnimalsInShelter;
         this.nameOfTheShelter = nameOfTheShelter;
     }
 
@@ -33,6 +36,7 @@ public class Shelter extends ExtensionClass {
                 filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
     }
 
+
     public static void deleteSelectedAnimalFromShelter(Animal pickedAnimalFromShelter) throws IOException {
         getExtension(Animal.class).remove(pickedAnimalFromShelter);
     }
@@ -45,4 +49,13 @@ public class Shelter extends ExtensionClass {
     public void setNameOfTheShelter(String nameOfTheShelter) {
         this.nameOfTheShelter = nameOfTheShelter;
     }
+
+    public Integer getMaximumCapacityOfAnimalsInShelter() {
+        return maximumCapacityOfAnimalsInShelter;
+    }
+
+    public void setMaximumCapacityOfAnimalsInShelter(Integer maximumCapacityOfAnimalsInShelter) {
+        this.maximumCapacityOfAnimalsInShelter = maximumCapacityOfAnimalsInShelter;
+    }
+
 }
