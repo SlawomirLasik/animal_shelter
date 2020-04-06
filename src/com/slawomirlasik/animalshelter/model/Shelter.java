@@ -58,4 +58,9 @@ public class Shelter extends ExtensionClass {
         this.maximumCapacityOfAnimalsInShelter = maximumCapacityOfAnimalsInShelter;
     }
 
+    public Integer getNumberAnimalsInTheShelter() {
+        return getExtension(Animal.class).size();
+    }
+
+
 }
