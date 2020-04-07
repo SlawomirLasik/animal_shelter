@@ -62,5 +62,9 @@ public class Shelter extends ExtensionClass {
         return getExtension(Animal.class).size();
     }
 
+    public Boolean checkIfShelterIsFull(){
+        return getNumberAnimalsInTheShelter() == this.maximumCapacityOfAnimalsInShelter;
+    }
+
 
 }
