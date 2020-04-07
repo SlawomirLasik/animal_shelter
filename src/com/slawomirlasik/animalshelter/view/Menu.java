@@ -117,6 +117,12 @@ public class Menu {
 //        private LocalDate birthDate;
 //        private LocalDate admissionDate;
         // get all data from user for a new animal (String name, String species, LocalDate birthDate, Float weight)
+        if (shelter.checkIfShelterIsFull()) {
+            System.out.printf("I am sorry, but currently the are %d animals out of %d maximum capacity of the shelter." +
+                            " Animal cannot be added here.", shelter.getNumberAnimalsInTheShelter(),
+                    shelter.getMaximumCapacityOfAnimalsInShelter());
+            return;
+        }
         try {
             shelter.addNewAnimalToTheShelter(new Animal(
                     getDataFromUser("Give name of an animal"),

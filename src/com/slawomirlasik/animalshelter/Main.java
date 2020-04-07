@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Menu menu = new Menu(new Shelter("Animal Heaven", 10));
+        Menu menu = new Menu(new Shelter("Animal Heaven", 1));
         menu.showMenu();
     }
 }
