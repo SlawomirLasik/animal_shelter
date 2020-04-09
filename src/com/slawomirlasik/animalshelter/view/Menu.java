@@ -87,7 +87,7 @@ public class Menu {
     }
 
     private void printDetailedInformationAboutShelter() throws IOException {
-        System.out.printf("Currently there are %d/$d animals in the shelter%n",
+        System.out.printf("Currently there are %d/%d animals in the shelter%n",
                 shelter.getNumberAnimalsInTheShelter(),
                 shelter.getMaximumCapacityOfAnimalsInShelter()
         );
