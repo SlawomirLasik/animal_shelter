@@ -192,6 +192,7 @@ public class Menu {
             case "delete": {
                 try {
                     shelter.deleteSelectedAnimalFromShelter(shelter.getAnimalById(new Long(args[1])));
+                    closeProgram();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
