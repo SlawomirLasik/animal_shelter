@@ -166,5 +166,28 @@ public class Menu {
     }
 
     public void runCommand(String[] args) {
+        String command = args[0];
+        switch (command) {
+            case "status": {
+                break;
+            }
+            case "help": {
+                break;
+            }
+            case "?": {
+                break;
+            }
+            case "add": {
+                break;
+            }
+            case "delete": {
+                break;
+            }
+            default:{
+                System.out.printf("Unrecognized command %s. run Main ? or Main help for command info", command);;
+                System.exit(-1);
+                break;
+            }
+        }
     }
 }
