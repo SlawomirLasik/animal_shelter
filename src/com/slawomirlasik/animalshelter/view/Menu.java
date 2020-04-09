@@ -190,7 +190,11 @@ public class Menu {
                 break;
             }
             case "delete": {
-
+                try {
+                    shelter.deleteSelectedAnimalFromShelter(shelter.getAnimalById(new Long(args[1])));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             default:{
