@@ -47,4 +47,14 @@ public class ExtensionClass implements Serializable {
         objectOutputStream.close();
     }
 
+    public static void loadExtensionsFromFile(String filePath) throws IOException, ClassNotFoundException {
+        // ad some basic security for not getting null pointer exception
+        if(filePath==null)filePath = DEFAULT_FILE_PATH;
+
+        //create Stream for reading from a file
+        FileInputStream fi = new FileInputStream(new File(filePath));
+        ObjectInputStream oi = new ObjectInputStream(fi);
+        extensionMap = (Map<Class, HashSet<Class>>) oi.readObject();
+    }
+
 }
