@@ -3,9 +3,10 @@ package com.slawomirlasik.animalshelter.model;
 import com.slawomirlasik.animalshelter.view.Menu;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.HashSet;
 
-public class Shelter extends ExtensionClass {
+public class Shelter extends ExtensionClass implements Serializable {
 
     private Integer maximumCapacityOfAnimalsInShelter;
 

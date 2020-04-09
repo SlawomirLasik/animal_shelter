@@ -1,10 +1,11 @@
 package com.slawomirlasik.animalshelter.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Map;
 
-public class ExtensionClass {
+public class ExtensionClass implements Serializable {
 
     private static Map<Class, HashSet<Class>> extensionMap = new Hashtable<>();
 
