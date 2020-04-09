@@ -164,4 +164,7 @@ public class Menu {
         System.out.printf("%s%n", message);
         return console.readLine();
     }
+
+    public void runCommand(String[] args) {
+    }
 }
