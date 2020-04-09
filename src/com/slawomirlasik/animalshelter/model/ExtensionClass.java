@@ -47,6 +47,10 @@ public class ExtensionClass implements Serializable {
         objectOutputStream.close();
     }
 
+    public static void loadExtensionsFromFile() throws IOException, ClassNotFoundException {
+        loadExtensionsFromFile(DEFAULT_FILE_PATH);
+    }
+
     public static void loadExtensionsFromFile(String filePath) throws IOException, ClassNotFoundException {
         // ad some basic security for not getting null pointer exception
         if(filePath==null)filePath = DEFAULT_FILE_PATH;
