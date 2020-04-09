@@ -1,6 +1,6 @@
 package com.slawomirlasik.animalshelter.model;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Map;
@@ -8,6 +8,7 @@ import java.util.Map;
 public class ExtensionClass implements Serializable {
 
     private static Map<Class, HashSet<Class>> extensionMap = new Hashtable<>();
+    private static final String DEFAULT_FILE_PATH = "data.adf";
 
 
     public ExtensionClass() {
@@ -31,5 +32,19 @@ public class ExtensionClass implements Serializable {
         return extensionMap.get(extentionClassKey);
     }
 
+    public static void saveExtensionsToFile() throws IOException {
+        saveExtensionsToFile(DEFAULT_FILE_PATH);
+    }
+
+    public static void saveExtensionsToFile(String filePath) throws IOException {
+        // add some basic security for not getting null pointer exception
+        if(filePath==null) filePath = DEFAULT_FILE_PATH;
+        //Create Stream for writing to a file
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        // write object to a file and close a stream
+        objectOutputStream.writeObject(extensionMap);
+        objectOutputStream.close();
+    }
 
 }
