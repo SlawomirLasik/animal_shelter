@@ -169,6 +169,11 @@ public class Menu {
         String command = args[0];
         switch (command) {
             case "status": {
+                try {
+                    printDetailedInformationAboutShelter();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             case "help": {
