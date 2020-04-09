@@ -185,7 +185,12 @@ public class Menu {
             case "add": {
                 break;
             }
+            case "animals": {
+                printingAllAnimalsInTheShelter();
+                break;
+            }
             case "delete": {
+
                 break;
             }
             default:{
