@@ -76,6 +76,12 @@ public class Menu {
     }
 
     private void closeProgram() {
+        System.out.println("Saving current status of Shelter to a file...");
+        try {
+            Shelter.saveExtensionsToFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("closing Shelter program, Bye!");
         System.exit(0);
     }
