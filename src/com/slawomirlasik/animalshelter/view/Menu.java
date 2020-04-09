@@ -18,6 +18,7 @@ public class Menu {
     private final String ADDING_NEW_ANIMAL_MESSAGE = "Add new animal";
     private final String PRINTING_ALL_ANIMALS_IN_SHELTER_MESSAGE = "Print All Animals currently in the shelter";
     private final String DELETE_AN_SELECTED_ANIMAL = "Delete animal from shelter";
+    private final String EXIT_PROGRAM_MESSAGE = "Exit Program";
 
     private Shelter shelter;
 
@@ -35,6 +36,7 @@ public class Menu {
             System.out.printf("1 - %s?%n", ADDING_NEW_ANIMAL_MESSAGE);
             System.out.printf("2 - %s?%n", PRINTING_ALL_ANIMALS_IN_SHELTER_MESSAGE);
             System.out.printf("3 - %s?%n", DELETE_AN_SELECTED_ANIMAL);
+            System.out.printf("4 - %s?%n", EXIT_PROGRAM_MESSAGE);
             // TODO SL:Add option to finish program
             String inputString;
             try {
@@ -55,6 +57,10 @@ public class Menu {
                         shelter.deleteSelectedAnimalFromShelter(shelter.pickAnimalFromShelter());
                         break;
                     }
+                    case "4": {
+                        closeProgram();
+                        break;
+                    }
                     default:
                         break;
                 }
@@ -67,6 +73,17 @@ public class Menu {
         }
 
 
+    }
+
+    private void closeProgram() {
+        System.out.println("Saving current status of Shelter to a file...");
+        try {
+            Shelter.saveExtensionsToFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("closing Shelter program, Bye!");
+        System.exit(0);
     }
 
     private void printDetailedInformationAboutShelter() throws IOException {

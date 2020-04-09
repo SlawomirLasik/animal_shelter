@@ -1,8 +1,9 @@
 package com.slawomirlasik.animalshelter.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Animal extends ExtensionClass {
+public class Animal extends ExtensionClass implements Serializable {
 
     private static Long Current_ID = 0l;
 
