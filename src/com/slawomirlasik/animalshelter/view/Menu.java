@@ -179,7 +179,7 @@ public class Menu {
                 break;
             }
             case "?": {
-                printHelpMessageForConsoleUsageFromTermial
+                printHelpMessageForConsoleUsageFromTermial();
                 break;
             }
             case "add": {
