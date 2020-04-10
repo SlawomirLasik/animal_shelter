@@ -37,6 +37,11 @@ public class Shelter extends ExtensionClass implements Serializable {
                 filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
     }
 
+    public Animal getAnimalById(Long id){
+        return ((HashSet<Animal>) getExtension(Animal.class)).stream().
+                filter(animal -> animal.getID().equals(id)).findFirst().get();
+    }
+
 
     public void deleteSelectedAnimalFromShelter(Animal pickedAnimalFromShelter) throws IOException {
         getExtension(Animal.class).remove(pickedAnimalFromShelter);

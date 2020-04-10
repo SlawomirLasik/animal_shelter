@@ -151,8 +151,6 @@ public class Menu {
             e.printStackTrace();
         }
 
-        // create a class of new animal
-        // add new animal to extention animal
     }
 
     private LocalDate getDateFromString(String dataFromUser) {
@@ -163,5 +161,76 @@ public class Menu {
     private String getDataFromUser(String message) throws IOException {
         System.out.printf("%s%n", message);
         return console.readLine();
+    }
+
+    public void runCommand(String[] args) {
+        String command = args[0];
+        switch (command) {
+            case "status": {
+                try {
+                    printDetailedInformationAboutShelter();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            case "help": {
+                printHelpMessageForConsoleUsageFromTermial();
+                break;
+            }
+            case "?": {
+                printHelpMessageForConsoleUsageFromTermial();
+                break;
+            }
+            case "add": {
+                addNewAnimalToShelter(args);
+                closeProgram();
+                break;
+            }
+            case "animals": {
+                printingAllAnimalsInTheShelter();
+                break;
+            }
+            case "delete": {
+                try {
+                    shelter.deleteSelectedAnimalFromShelter(shelter.getAnimalById(new Long(args[1])));
+                    closeProgram();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            default: {
+                System.out.printf("Unrecognized command %s. run Main ? or Main help for command info", command);
+                ;
+                System.exit(-1);
+                break;
+            }
+        }
+    }
+
+    private void printHelpMessageForConsoleUsageFromTermial() {
+        String runCommand = "java com.slawomirlasik.animalshelter.Main ";
+        System.out.printf("To show status of shelter run: %s status%n", runCommand);
+        System.out.printf("To show current animals in shelter run : %s animals%n", runCommand);
+        System.out.printf("To add new animal to shelter run : %s add %s%n", runCommand,
+                "<name> <species> <date:format:DD-MM-YYYY> <weight:string-float>");
+        System.out.printf("To delete an animal from shelter run : %s delete <id>%n", runCommand);
+
+    }
+
+    private void addNewAnimalToShelter(String[] args) {
+        if (shelter.checkIfShelterIsFull()) {
+            System.out.printf("I am sorry, but currently the are %d animals out of %d maximum capacity of the shelter." +
+                            " Animal cannot be added here.", shelter.getNumberAnimalsInTheShelter(),
+                    shelter.getMaximumCapacityOfAnimalsInShelter());
+            return;
+        }
+        shelter.addNewAnimalToTheShelter(new Animal(
+                args[1],
+                args[2],
+                getDateFromString(args[3]),
+                Float.parseFloat(args[4])
+        ));
     }
 }
