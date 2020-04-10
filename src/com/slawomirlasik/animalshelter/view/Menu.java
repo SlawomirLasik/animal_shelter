@@ -151,8 +151,6 @@ public class Menu {
             e.printStackTrace();
         }
 
-        // create a class of new animal
-        // add new animal to extention animal
     }
 
     private LocalDate getDateFromString(String dataFromUser) {
@@ -183,6 +181,8 @@ public class Menu {
                 break;
             }
             case "add": {
+                addNewAnimalToShelter(args);
+                closeProgram();
                 break;
             }
             case "animals": {
@@ -198,11 +198,27 @@ public class Menu {
                 }
                 break;
             }
-            default:{
-                System.out.printf("Unrecognized command %s. run Main ? or Main help for command info", command);;
+            default: {
+                System.out.printf("Unrecognized command %s. run Main ? or Main help for command info", command);
+                ;
                 System.exit(-1);
                 break;
             }
         }
+    }
+
+    private void addNewAnimalToShelter(String[] args) {
+        if (shelter.checkIfShelterIsFull()) {
+            System.out.printf("I am sorry, but currently the are %d animals out of %d maximum capacity of the shelter." +
+                            " Animal cannot be added here.", shelter.getNumberAnimalsInTheShelter(),
+                    shelter.getMaximumCapacityOfAnimalsInShelter());
+            return;
+        }
+        shelter.addNewAnimalToTheShelter(new Animal(
+                args[1],
+                args[2],
+                getDateFromString(args[3]),
+                Float.parseFloat(args[4])
+        ));
     }
 }
