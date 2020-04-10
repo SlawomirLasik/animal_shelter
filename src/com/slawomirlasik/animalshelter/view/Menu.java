@@ -175,9 +175,11 @@ public class Menu {
                 break;
             }
             case "help": {
+                printHelpMessageForConsoleUsageFromTermial();
                 break;
             }
             case "?": {
+                printHelpMessageForConsoleUsageFromTermial
                 break;
             }
             case "add": {
@@ -205,6 +207,16 @@ public class Menu {
                 break;
             }
         }
+    }
+
+    private void printHelpMessageForConsoleUsageFromTermial() {
+        String runCommand = "java com.slawomirlasik.animalshelter.Main ";
+        System.out.printf("To show status of shelter run: %s status%n", runCommand);
+        System.out.printf("To show current animals in shelter run : %s animals%n", runCommand);
+        System.out.printf("To add new animal to shelter run : %s add %s%n", runCommand,
+                "<name> <species> <date:format:DD-MM-YYYY> <weight:string-float>");
+        System.out.printf("To delete an animal from shelter run : %s delete <id>%n", runCommand);
+
     }
 
     private void addNewAnimalToShelter(String[] args) {
