@@ -125,34 +125,6 @@ public class Menu {
         shelter.printAllAnimalsCurrentlyInTheShelter();
     }
 
-    private void addNewAnimalToShelter() {
-//        private String name;
-//        private String species;
-//
-//        private Float weight;
-//
-//        private LocalDate birthDate;
-//        private LocalDate admissionDate;
-        // get all data from user for a new animal (String name, String species, LocalDate birthDate, Float weight)
-        if (shelter.checkIfShelterIsFull()) {
-            System.out.printf("I am sorry, but currently the are %d animals out of %d maximum capacity of the shelter." +
-                            " Animal cannot be added here.", shelter.getNumberAnimalsInTheShelter(),
-                    shelter.getMaximumCapacityOfAnimalsInShelter());
-            return;
-        }
-        try {
-            shelter.addNewAnimalToTheShelter(new Animal(
-                    getDataFromUser("Give name of an animal"),
-                    getDataFromUser("Give species of an animal"),
-                    getDateFromString(getDataFromUser("Give birth date of an animal [DD-MM-YYYY]")),
-                    Float.parseFloat(getDataFromUser("Give animal weight (in kilograms)")))
-            );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     private LocalDate getDateFromString(String dataFromUser) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-y");
         return LocalDate.parse(dataFromUser, formatter);
@@ -221,4 +193,15 @@ public class Menu {
                 Float.parseFloat(args[4])
         ));
     }
+
+    private void addNewAnimalToShelter() throws IOException {
+        String[] newAnimalDataStringArray = {
+                getDataFromUser("Give name of an animal"),
+                getDataFromUser("Give species of an animal"),
+                getDataFromUser("Give birth date of an animal [DD-MM-YYYY]"),
+                getDataFromUser("Give animal weight (in kilograms)")
+        };
+        addNewAnimalToShelter(newAnimalDataStringArray);
+    }
+
 }
