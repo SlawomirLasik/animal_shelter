@@ -20,6 +20,7 @@ public class Shelter extends ExtensionClass implements Serializable {
 
     public void addNewAnimalToTheShelter(Animal animal) {
         Animal.getExtension(Animal.class).add(animal);
+        System.out.println("Animal added..");
     }
 
     public void printAllAnimalsCurrentlyInTheShelter() {
@@ -38,6 +39,7 @@ public class Shelter extends ExtensionClass implements Serializable {
     }
 
     public Animal getAnimalById(Long id){
+        System.out.println("Animal deleted ...");
         return ((HashSet<Animal>) getExtension(Animal.class)).stream().
                 filter(animal -> animal.getID().equals(id)).findFirst().get();
     }
