@@ -146,10 +146,7 @@ public class Menu {
                 }
                 break;
             }
-            case "help": {
-                printHelpMessageForConsoleUsageFromTermial();
-                break;
-            }
+            case "help":
             case "?": {
                 printHelpMessageForConsoleUsageFromTermial();
                 break;
