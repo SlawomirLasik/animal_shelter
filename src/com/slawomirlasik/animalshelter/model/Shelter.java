@@ -20,6 +20,7 @@ public class Shelter extends ExtensionClass implements Serializable {
 
     public void addNewAnimalToTheShelter(Animal animal) {
         Animal.getExtension(Animal.class).add(animal);
+        System.out.println("Animal added..");
     }
 
     public void printAllAnimalsCurrentlyInTheShelter() {
