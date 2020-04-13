@@ -4,7 +4,10 @@ import com.slawomirlasik.animalshelter.view.Menu;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Shelter extends ExtensionClass implements Serializable {
 
@@ -24,8 +27,10 @@ public class Shelter extends ExtensionClass implements Serializable {
     }
 
     public void printAllAnimalsCurrentlyInTheShelter() {
-        getExtension(Animal.class).stream().forEach(System.out::println);
+        Optional.ofNullable(getExtension(Animal.class)).map(Collection::stream).
+                orElseGet(Stream::empty).forEach(System.out::println);
     }
+
 
     public Animal pickAnimalFromShelter() throws IOException {
         System.out.println("Pick Animal ID for deletion:");
