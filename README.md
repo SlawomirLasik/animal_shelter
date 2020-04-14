@@ -12,10 +12,10 @@ Program uses Java Serialization for saving state of the shelter. Extensions for 
 
 The main method is in Main.java class. This will show console menu where user can interact with by choosing the apriopiate menu (1-4) at the moment.
 
-1- Adding new animal
-2 - Print All Animals currently in the shelter
-3 - delete animal from the shelter (using id)
-4 - Exits Program
+1. Adding new animal
+2. Print All Animals currently in the shelter
+3. delete animal from the shelter (using id)
+4. Exits Program
 
 Also one can run program with the commands in the console.
 
