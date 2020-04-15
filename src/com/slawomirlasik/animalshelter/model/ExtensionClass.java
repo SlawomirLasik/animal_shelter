@@ -79,4 +79,12 @@ public class ExtensionClass implements Serializable {
                 ((extensionMap = (Map<Class, HashSet<Class>>) oi.readObject()) != null ? true : false);
     }
 
+    public static  <T> void printExtension(Class<T> classExtensionKey){
+        HashSet<T> extension = getExtension(classExtensionKey);
+
+        for(T extensionObject : extension){
+            System.out.println(extensionObject);
+        }
+    }
+
 }

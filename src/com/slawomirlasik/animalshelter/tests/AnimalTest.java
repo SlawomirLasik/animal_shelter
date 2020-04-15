@@ -17,7 +17,12 @@ public class AnimalTest {
         new Animal("shaki", "dog",
                 LocalDate.parse("11-11-1111",  DateTimeFormatter.ofPattern("d-M-y")), 20.1f);
 
+        Animal.printExtension(Animal.class);
 
+    }
 
+    public static void main(String[] args) {
+        AnimalTest animalTest = new AnimalTest();
+        animalTest.testIfAnimalClassIsCreatedNormally();
     }
 }
