@@ -18,21 +18,21 @@ public class ExtensionClass implements Serializable {
                 System.out.println("Loaded previous Shelter status successfully");
             } else {
                 System.out.println("Loading previous Shelter status failed. Creating empty lists of animals...");
-                Class extensionClassKey = this.getClass();
-                HashSet extention = null;
-
                 extensionMap = new Hashtable<>();
-                if (extensionMap.containsKey(extensionClassKey)) {
-                    // we have extension with this key and we retrieve it
-                    extention = extensionMap.get(extensionClassKey);
-                } else {
-                    // we do not have this extension key and we have to create it
-                    extention = new HashSet<>();
-                    extensionMap.put(extensionClassKey, extention);
-                }
-                // we add current class to the extension
-                extention.add(this);
             }
+            Class extensionClassKey = this.getClass();
+            HashSet extention = null;
+
+            if (extensionMap.containsKey(extensionClassKey)) {
+                // we have extension with this key and we retrieve it
+                extention = extensionMap.get(extensionClassKey);
+            } else {
+                // we do not have this extension key and we have to create it
+                extention = new HashSet<>();
+                extensionMap.put(extensionClassKey, extention);
+            }
+            // we add current class to the extension
+            extention.add(this);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -72,17 +72,17 @@ public class ExtensionClass implements Serializable {
 
         //create Stream for reading from a file
         File dataFile = new File(filePath);
-        if(!dataFile.exists()) return false;
+        if (!dataFile.exists()) return false;
         FileInputStream fi = new FileInputStream(dataFile);
         ObjectInputStream oi = new ObjectInputStream(fi);
         return
                 ((extensionMap = (Map<Class, HashSet<Class>>) oi.readObject()) != null ? true : false);
     }
 
-    public static  <T> void printExtension(Class<T> classExtensionKey){
+    public static <T> void printExtension(Class<T> classExtensionKey) {
         HashSet<T> extension = getExtension(classExtensionKey);
 
-        for(T extensionObject : extension){
+        for (T extensionObject : extension) {
             System.out.println(extensionObject);
         }
     }
