@@ -195,16 +195,18 @@ public class Menu {
                     shelter.getMaximumCapacityOfAnimalsInShelter());
             return;
         }
-        shelter.addNewAnimalToTheShelter(new Animal(
+        shelter.addNewAnimalToTheShelter(
                 args[1],
                 args[2],
                 getDateFromString(args[3]),
                 Float.parseFloat(args[4])
-        ));
+        );
     }
 
     private void addNewAnimalToShelter() throws IOException {
         String[] newAnimalDataStringArray = {
+                "", // for simulation of being invoked by conosle command rather than console menu
+                        // -> must be first argument a command
                 getDataFromUser("Give name of an animal"),
                 getDataFromUser("Give species of an animal"),
                 getDataFromUser("Give birth date of an animal [DD-MM-YYYY]"),
