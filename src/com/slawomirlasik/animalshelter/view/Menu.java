@@ -195,12 +195,12 @@ public class Menu {
                     shelter.getMaximumCapacityOfAnimalsInShelter());
             return;
         }
-        shelter.addNewAnimalToTheShelter(new Animal(
+        shelter.addNewAnimalToTheShelter(
                 args[1],
                 args[2],
                 getDateFromString(args[3]),
                 Float.parseFloat(args[4])
-        ));
+        );
     }
 
     private void addNewAnimalToShelter() throws IOException {

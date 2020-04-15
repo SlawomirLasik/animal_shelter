@@ -4,6 +4,7 @@ import com.slawomirlasik.animalshelter.view.Menu;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
@@ -21,10 +22,6 @@ public class Shelter extends ExtensionClass implements Serializable {
         this.nameOfTheShelter = nameOfTheShelter;
     }
 
-    public void addNewAnimalToTheShelter(Animal animal) {
-        Animal.getExtension(Animal.class).add(animal);
-        System.out.println("Animal added..");
-    }
 
     public void printAllAnimalsCurrentlyInTheShelter() {
         Optional.ofNullable(getExtension(Animal.class)).map(Collection::stream).
@@ -43,7 +40,7 @@ public class Shelter extends ExtensionClass implements Serializable {
                 filter(animal -> animal.getID().equals(new Long(input))).findFirst().get();
     }
 
-    public Animal getAnimalById(Long id){
+    public Animal getAnimalById(Long id) {
         System.out.println("Animal deleted ...");
         return ((HashSet<Animal>) getExtension(Animal.class)).stream().
                 filter(animal -> animal.getID().equals(id)).findFirst().get();
@@ -75,9 +72,13 @@ public class Shelter extends ExtensionClass implements Serializable {
         return getExtension(Animal.class) != null ? getExtension(Animal.class).size() : 0;
     }
 
-    public Boolean checkIfShelterIsFull(){
+    public Boolean checkIfShelterIsFull() {
         return getNumberAnimalsInTheShelter() == this.maximumCapacityOfAnimalsInShelter;
     }
 
 
+    public void addNewAnimalToTheShelter(String name, String species, LocalDate birthDate, float weight) {
+        new Animal(name, species, birthDate, weight);
+        System.out.println("Animal added...");
+    }
 }
