@@ -1,5 +1,5 @@
 # animal_shelter
-The simple project for practice basic Java ecosystem practice
+The simple project for basic Java ecosystem practice
 
 The project is an *Animal Shelter* system management in which one can:
 - store data about animals in the shelter
