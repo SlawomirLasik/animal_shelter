@@ -26,7 +26,7 @@ When One would like to remove animal from the shelter it is asked to give **ID**
 
 ![Picture of deleting animal. One must pick the ID from the short list and write it in the console](/images/deletingTheAnimalUsingConsoleMenu.png)
 
-The last option closes the Program and saves its state to the **data.adf** in the current *classpath*.
+The last option closes the Program and saves its state to the **data.adf** file in the current *classpath*.
 
 Also one can run program with the commands in the console:
 
