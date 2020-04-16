@@ -70,5 +70,5 @@ like so:
 ![Picture of console command for deleting animal giving the ID from the given list](/images/deletingTheAnimalUsingConsoleCommand.png)
 
 
-There are some bugs. It is a working progress. All the found bugs can be found by browsing the current branches.
+There are some bugs. It is a working progress. All the found bugs can be found by browsing the [current branches](https://github.com/SlawomirLasik/animal_shelter/branches/yours).
 
