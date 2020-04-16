@@ -12,7 +12,7 @@ Program uses *Java Serialization* for saving state of the shelter. *Extensions* 
 
 The **main method** is in **Main.java** class. This will show console menu where user can interact with by choosing the apriopiate menu (1-4) at the moment.
 
-![GitHub Logo](/images/consoleMenu.jpg)
+![Picture of Terminal with the Menu of possible actions in Animal Shelter System.](/images/consoleMenu.png)
 Format: ![Picture of Terminal with the Menu of possible actions in Animal Shelter System.](url)
 
 
