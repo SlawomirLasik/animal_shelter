@@ -28,6 +28,47 @@ When One would like to remove animal from the shelter it is asked to give **ID**
 
 The last option closes the Program and saves its state to the **data.adf** in the current *classpath*.
 
-Also one can run program with the commands in the console.
+Also one can run program with the commands in the console:
 
+`java com.slawomirlasik.animalshelter.Main <command> <args>`
+
+To show current status of the shelter:
+
+`java com.slawomirlasik.animalshelter.Main status`
+
+![Picture of console command of showing current status of Animal Shelter](/images/showingStatusOfAnimalShelterUsingConsoleCommand.png)
+
+To see help for console commands use:
+
+`java com.slawomirlasik.animalshelter.Main ?`
+
+or
+`java com.slawomirlasik.animalshelter.Main help`
+
+![Picture of console command for displaying help about console commands usage](/images/showingHelpForConsoleCommands.png)
+
+To see animals stored in the Animal Shelter:
+
+`java com.slawomirlasik.animalshelter.Main animals`
+
+![Picture of console command for displaying all animals in the shelter at the moment](/images/showingAnimalsCurrentlyInTheShelterUsingConsoleCommand.png)
+
+To add new animal using console command:
+
+`java com.slawomirlasik.animalshelter.Main add <name_of_animal> <species> <date_of_birth> <weight>`
+
+like so:
+
+![Picture of console command for adding new animal with add name of animal, species, date of birth, weight](/images/addingNewAnimalUsingConsoleCommand.png)
+
+and to delete using console command:
+
+`java com.slawomirlasik.animalshelter.Main delete <ID>`
+
+like so:
+
+![Picture of console command for deleting animal giving the ID from the given list](/images/deletingTheAnimalUsingConsoleCommand.png)
+
+
+There are some bugs. It is a working progress. All the found bugs can be found by browsing the current branches.
 
